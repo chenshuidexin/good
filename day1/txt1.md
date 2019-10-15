@@ -33,8 +33,8 @@
 + 创建变量 var 变量名=值;
 - 创建常量 conset (es6新增)
 - function 创建函数变量
-- class 创建函数
-- es6的导入import a from '.a/.js'
+- class  F{}创建函数
+- import a from '../a.js'  es6的语法导入
 - symbol 创建唯一值
 ## js的命名规范
 - 严格区分大小写；
@@ -54,7 +54,7 @@
 - 引用数据类型
    + 对象数据类型 object
        - {name:xxx，age：www,} 普通对象
-       - 数组对象
+       -  [] 数组对象
        - Math  数学对象
        - /^$/  正则对象
        - Date  日期对象
@@ -64,6 +64,7 @@
 >NaN (not a  number) 
 + 把其他值转化为数字  
    - 只要字符串中出现非有效数字，那么结果就是NaN(第一个小数点不算)
+   - 空字符串转化数字为0
 - 把布尔值转化为数字
      + Number(false)//0
      + Number(true)//1
