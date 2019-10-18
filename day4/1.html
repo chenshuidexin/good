@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .name{
+        background: palegreen;
+        color: orange;
+        font-size: 40px;
+        text-align: center;
+        cursor: pointer;/*小手出现*/
+    }
+    .detail{
+        width: 600px;
+        margin: 0 auto;
+        display: none;
+    }
+    img{
+        display: block;
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box">
+        <div class="name" id="name">姑娘</div>
+        <div class="detail" id="detail"><img src="../day4/imgs/u=4189340845,2809659975&fm=26&gp=0.jpg" alt=""></div>
+    </div>
+    <script>
+        // for (var i = 0; i < 10; i++) {
+        //     if (i >= 2) {
+        //         i += 2;
+        //         continue;
+        //     }
+        //     if (i >= 6) {
+        //         i--;
+        //         break;
+        //     }
+        //     i++;
+        //     console.log(i)
+        // }
+        // console.log(i)
+
+
+
+
+//基于js实现业务逻辑
+//1.想要操作谁就先获取谁
+//2.给操作的元素绑定相应的时间
+//3.在事件里绑定相应的业务逻辑
+
+
+//通过id获取页面中的元素
+let name=document.getElementById('name');
+let detail=document.getElementById('detail')
+name.onclick=function(){
+    // detail.style.display="block";
+    let status= detail.style.display;
+    console.log(status);
+    if(status === 'block'){//已经是空就要出现
+        console.log(status);
+        detail.style.display="none";
+    }else{
+        console.log(status);
+        detail.style.display="block";
+    }
+}
+
+// name.onclick=function(){
+//     // detail.style.display="block";
+//     let status= detail.style.display;
+//     console.log(status);
+//     if(status === 'none'){//已经是空第二次点击才会出现
+//         console.log(status);
+//         detail.style.display="block";
+//     }else{
+//         console.log(status);
+//         detail.style.display="none";
+//     }
+// }
+
+    </script>
+</body>
+
+</html>
