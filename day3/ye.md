@@ -17,6 +17,7 @@ let a = '10';
 a == 10 ? a++ : a--;
 console.log(a);//11
 ​
+//switch case 比较的是全等 ===
 let b = '10';
 switch (b) {
     case 10:
@@ -61,11 +62,11 @@ parseInt('35.4.2') === parseFloat('35.A.2')//true
 '' == 0;//true
 [0] == false;//true
 true == 1;//true
-{} == '';//false
+({}) == '';//false
 '12' > 2;//true
 '12' > '2';//false
 [] == 0;//true
-0 == null;//true
+****0 == null;//false****
 '{}' == 1;//false
 undefined == null;//true
 null == undefined ;//ture
@@ -80,7 +81,29 @@ console.log(++i == i++)  //true
 console.log(i);//4
 ```
 ## 如何判断一个数字为整数？（用浏览器的方法来判断）
-> 通过parseInt(xx)===parseFloat(xx)结果为true
+```js
+通过parseInt(xx)===parseFloat(xx)结果为true
+function fn(num){
+    if(num === parseInt(num)){
+        alert("整数")
+    }else{
+        alert("重新")
+    }
+}
+```
+```js
+    function isInteger(num) {
+        if (!isNaN(num) && num%1 === 0 ) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+    var a = 8; //给a赋的值就是需要进行判断的数字
+    var isNum = isInteger(a);
+    console.log(isNum);
+//当返回值为true时，需要判断的数字为整数
+```
 ## 把其他数据类型转换为数字有几种转换方式？
 - >Number()转化
 - >parseInt()/parseFloat()转化

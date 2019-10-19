@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 40px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #tabBox {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        #navBox {
+            display: flex;
+            position: relative;
+            top: 1px;
+        }
+
+        #navBox>li {
+            border: 1px solid lightcoral;
+            padding: 10px;
+            font-size: 30px;
+            color: lightslategrey;
+            margin-right: 10px;
+        }
+
+        #tabBox>div{
+            height: 150px;
+            line-height: 150px;
+            text-align: center;
+            border: 1px solid lightblue;
+            display: none;
+        }  
+
+        #tabBox>div.active {
+            display: block;
+        }
+
+        #navBox>li.active {
+            border-bottom-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tabBox">
+        <ul id="navBox">
+            <li class="active">胡歌</li>
+            <li>白敬亭</li>
+            <li>何炅</li>
+        </ul>
+        <div class="active">成熟</div>
+        <div>少年</div>
+        <div>体贴</div>
+    </div>
+    <script>
+        // //获取元素（获取谁就操作谁）
+        // const a=document.getElementById('navBox')//通过页面的id获取页面元素（如果获取不到就是null）
+        // //获取页面的元素      对象.className=xxx 给元素添加className类名
+        // const navList=navBox.getElementByTagName('li');//通过元素的标签名获取元素（如果获取不到就是空数组）
+        // let aa =document.getElementByClassName('active')//通过元素的Class名获取元素（如果获取不到就是空数组）
+        // let bb=document.querySelectorAll('#navBox li')//综合获取页面中的元素。
+
+
+        //获取多个同样标签
+        let navList = document.querySelectorAll('#navBox li');
+        // console.log(navList);
+        
+        let tabList = document.querySelectorAll('#tabBox div');
+        // console.log(tabList);
+        
+        // 给相应的元素绑定相应的事件
+        for (var i = 0; i < navList.length; i++) {
+            // console.log(i)
+            navList[i].index=i;//自定义属性，存储i所有值
+            navList[i].onclick = function(){
+                changeTab(this.index);
+                //this.index获取的是之前绑定在元素自定义属性值上的索引值
+                // alert(3)
+            }
+        }
+
+        function changeTab(index) {
+            for (var i = 0; i < navList.length; i++) {
+                //清除所有的class名
+                navList[i].className = '';
+                tabList[i].className = '';
+            }
+            //绑定事件
+            navList[index].className='active';
+            tabList[index].className='active';
+        }
+
+
+        /*
+        分析不行的原因：当页面显示的时候(必须得等代码加载完成)但代码执行到for循环的时候，会循环三次，这时候绑定的时间并不会执行，(用户点击时才会执行)，这个循环结束，i变成3。
+        */
+    </script>
+</body>
+
+</html>
