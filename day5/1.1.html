@@ -89,14 +89,14 @@
                 // alert(3)
             }
         }
-
+//进行封装函数
         function changeTab(index) {
             for (var i = 0; i < navList.length; i++) {
                 //清除所有的class名
                 navList[i].className = '';
                 tabList[i].className = '';
             }
-            //绑定事件
+            //绑定事件的点击
             navList[index].className='active';
             tabList[index].className='active';
         }

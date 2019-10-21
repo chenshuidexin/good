@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // !function(q){
+    //     console.log(q);
+    // }(12);
+
+    // ~function(q){
+    //     console.log(q);
+    // }(12);
+// function fn(){
+//     // console.log(arguments)
+//     let num=0;
+//     for(var i=0;i<arguments.length;i++){
+//     num+=arguments[i]
+// }
+// return num;
+// }
+// let dd=fn(1,2,3,4,5);
+// console.log(dd);
+
+
+
+
+// let fn=(n,m)=>{console.log(n+m)}
+// fn(1,2)
+
+
+
+// let fn=m=>{
+//     console.log(m)
+// };fn(1)
+
+
+// let fn=(n,m)=>n+m
+// console.log(fn(1,2))
+
+
+// let fn=()=>({});
+// console.log(fn())
+
+
+
+
+let fn=(...a)=>{
+    //收缩运算符
+    console.log(a)
+    //展开运算符
+    console.log(...a)
+}
+fn(1,2,3,4,5)
+
+console.log(...[1,2,3,4])
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>选择1</button>
+    <button>选择2</button>
+    <button>选择3</button>
+    <script>
+    const btns=document.getElementsByTagName('button');
+    // console.log(btns);
+    for(var i=0;i<btns.length;i++){
+        btns[i].inde=i;
+        btns[i].onclick=function(){
+            // this.inde++;
+            // this.innerText=`选择${this.inde}`
+            alert(this.inde+1);
+        }
+    }
+
+    </script>
+</body>
+</html>
