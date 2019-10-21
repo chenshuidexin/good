@@ -104,4 +104,10 @@ let fn=(...a)=>{
 }
 fn(1,2,3,4,5)
 ```
-## 
+>arguments.callee指的是函数的本身，在严格模式下已经严格禁止。
+```js
+function fn(){
+    console.log(arguments.callee)//函数本身
+}
+fn();
+```
