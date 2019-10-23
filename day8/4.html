@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn(m){
+            return function(r){
+                console.log(1);//m没有作用就走函数里面的值 调用为1
+                return r//3
+            }
+        }
+    let x=fn(function(r){//实参传输，没有作用
+        console.log(2)
+        return  r
+    })
+    console.log(x(3));
+
+
+
+
+    // let fn=function(m){
+    //     (function(m){
+    //         m(6);//6是实参
+    //     })(m);
+    //     return 6
+    // }
+    // let b=fn(function(m){
+    //     console.log(m)//=>传到这儿来   调用26行出结果6
+    //     return 7
+    // })//fn是赋值==>6
+    // console.log(b());//=>6()
+
+
+
+//     function fn(d){
+//         return d(2)
+//     }
+//     let s=fn(function(d){//2
+//         return function (d){//s(1)调用此函数
+//             console.log(d)
+//         }
+//     })
+
+// s(1)
+
+
+    </script>
+</body>
+</html>
