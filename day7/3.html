@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组去重多种方法</title>
+</head>
+<body>
+    <script>
+    //双for去重法
+    // let ary=[1,2,3,1,2,4,2,6,4];
+    // for(var i=0;i<ary.length;i++){
+    //     for(var j=i+1;j<ary.length;j++){
+    //        if(ary[i]===ary[j]){
+    //            ary.splice(j,1);
+    //            j--;
+    //        } 
+    //     }
+    // }
+    // console.log(ary);
+    //新数组去重
+    // let ary=[1,2,3,1,2,4,2,6,4];
+    // let newAry=[];
+    // for(var i=0;i<ary.length;i++){
+    //     let cc=ary[i];
+    //     if(newAry.includes(cc)){//包含的话返回true
+    //         continue;//跳过，继续下一次循环
+    //     }
+    //     newAry.push(cc)//增加新的项
+    // }
+    // console.log(newAry)
+
+    //对象去重法
+    let ary=[1,2,3,1,2,4,2,6,4];
+    let obj={};
+    for(var i=0;i<ary.length;i++){
+        let ss=ary[i];
+        if(obj[ss] !== undefined){//有重复的值
+            ary[i]=ary[ary.length-1]//最后一项删除
+            ary.length--;
+            i--;
+        }else{//增加新的值 
+            obj[ss]=ss;
+        }  
+    }
+    console.log(ary);
+
+
+    //forEach去重法
+    let ary=[1,2,3,1,2,4,2,6,4];
+    let newAry=[];
+    ary.forEach((item,i)=>{
+        let aa=ary[i];//要的是索引值
+        if(!newAry.includes(aa)){
+            newAry.push(aa)
+        }
+    })
+    console.log(newAry);
+
+
+    </script>
+</body>
+</html>

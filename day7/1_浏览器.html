@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fn(m) {
+            return function (n) {
+                return console.log('恭喜你，修改成功！') 
+            }
+        }
+
+        let n = fn()
+        console.log(n())//undefined 找不到控制台的结果
+    </script>
+</body>
+
+</html>

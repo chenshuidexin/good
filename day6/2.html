@@ -51,29 +51,29 @@
 
         // let fn=(...a)=>{
         //     //收缩运算符
-        //     console.log(a)
+        //     console.log(a)//数组
         //     //展开运算符
-        //     console.log(...a)
+        //     console.log(...a)//数字
         // }
         // fn(1,2,3,4,5)
 
-        // console.log(...[1,2,3,4])
+        // console.log(...[1,2,3,4])//数字
 
 
 
 
-        let a = 'name';
-            let person = 'erYa'
-            let obj = {
-                // name: 1? 'badMonkey' : 'sunWuKong',
-                age: null && 0,
-                12: a,
-                person
-            }
-            // console.log(obj[a])//badMonkey
+        // let a = 'name';
+        //     let person = 'erYa'
+        //     let obj = {
+        //         // name: 1? 'badMonkey' : 'sunWuKong',
+        //         age: null && 0,
+        //         12: a,
+        //         person
+        //     }
+        //     // console.log(obj[a])//badMonkey
             // console.log(obj['name'])//badMonkey
             // console.log(obj[name])//undefined
-            // console.log(window)//name: "";
+            // console.log(window.name)//name: "";
             // console.log(obj.12)//报错
             // console.log(obj[12])//name
             // console.log(person)//erYa
@@ -90,6 +90,13 @@
 //         for(var i in obj){
 //             console.log(obj[i]);   
 //         }
+
+
+let ary=[12,14,16,13,3,6] 
+    console.log(ary.unshift(1))//7 新数组的长度
+    ary[0]='ss';//修改值  重新赋值
+    ary[-1]='aaa';//会破坏数组的原有结构
+    console.log(ary);
     </Script>
 </body>
 
