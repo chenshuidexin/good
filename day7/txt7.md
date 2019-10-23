@@ -15,7 +15,7 @@
     console.log(ary.push(11,78,45,25))//新数组的长度
     console.log(ary)
     ```
-    >其他增加数组的方法：ary[ary.length]  数组length的方法   ========[...ary,1,,5,6,4]  扩展运算符
+    >其他增加数组的方法：ary[ary.length]  数组length的方法   ========[...ary,1,5,6,4]  扩展运算符
     - unshift：项目组开头增加的内容
     - 传递的实参：可以传多个js数据值
     - 返回值：新数组的length
@@ -33,7 +33,7 @@
     - 原数组发生变化
     ```js
     let ary=[12,14,16,13,3,6] ;
-    console.log(ary.shift());//12
+    console.log(ary.shift());//[12]
     console.log(ary);
     ```
     >delete ary[0] =>empty//破环数组结构
@@ -43,7 +43,7 @@
     - 原数组发生变化
     ```js
     let ary=[12,14,16,13,3,6] ;
-    console.log(ary.pop())
+    console.log(ary.pop())//[6]
     console.log(ary)
     ```
     >- ary.length=ary.length-1;

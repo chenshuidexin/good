@@ -35,6 +35,9 @@
     for(var i=0;i<ary.length;i++){
         let ss=ary[i];
         if(obj[ss] !== undefined){//有重复的值
+            // ary.splice(i,1);
+            // i--;
+            //另一种方法
             ary[i]=ary[ary.length-1]//最后一项删除
             ary.length--;
             i--;

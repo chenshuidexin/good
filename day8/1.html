@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+//    let str='asdaff'
+//    console.log(str.lastIndexOf('a',2))
+
+// let str='2019-10-23 12:33 '
+// console.log(str.replace('-','年').replace('-','月').replace(' ','日').replace(':','时').replace(' ','分'))
+
+
+let  str='https://www.baidu.com/?name=nihao&age=null&sex=null'
+let index=str.indexOf('?')//21
+let newStr=str.substring(index+1)//获取索引值(21)之后的所有值(链接的参数)
+//str.split('?')[1]//获取的是？之后的值(获取链接的参数)
+let ary=newStr.split('&')
+let obj={};
+for(var i=0;i<ary.length;i++){
+    let cur=ary[i];
+    let newAry=cur.split('=')
+    obj[newAry[0]]=newAry[1];
+}
+console.log(obj);
+   </script> 
+</body>
+</html>

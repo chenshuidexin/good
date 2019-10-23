@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // //冒泡排序
+    // let arr=[11,2,6,8,17,4,9];
+    // for(var i=0;i<arr.length-1;i++){//大循环  轮数少一个
+    //     for(var j=0;j<arr.length-1-i;j++){//从头开始两两比较
+    //         if(arr[j]>arr[j+1]){//大的后面在后排   最大的一直在后面排着不动
+    //             var temp=arr[j];
+    //             arr[j]=arr[j+1];
+    //             arr[j+1]=temp;
+    //         }
+    //     }
+    // }
+    // console.log(arr)
+    // //forEach循环方法
+    // let att=[11,2,6,8,17,4,9];
+    // att.forEach((item,i)=>{
+    //     for(var j=0;j<att.length-1-i;j++)
+    //     if(att[j]>att[j+1]){
+    //         var t=att[j];
+    //         att[j]=att[j+1];
+    //         att[j+1]=t;
+    //     }
+    // })
+    // console.log(att);
+
+
+    // //快速排序
+    // let ass=[11,2,6,8,17,4,9];
+    // function fn(ass){
+    //     if(ass.length<=1){
+    //         return ass;
+    //     }
+    //     let center=Math.floor(ass.length/2);
+    //     let centerVal=ass.splice(center,1)[0];
+    //     let leftAry=[],rightAry=[];
+    //     for(var i=0;i<ass.length;i++){
+    //         if(centerVal>ass[i]){
+    //             leftAry.push(ass[i])
+    //         }else{
+    //             rightAry.push(ass[i])
+    //         }
+    //     }
+    //     // console.log(centerVal)
+    //     return fn(leftAry).concat(centerVal,fn(rightAry))//fn()d的目的是继续函数递归
+    // }
+    // console.log(fn(ass));
+
+
+
+//插入排序
+    let a=[11,2,6,8,17,4,9];
+    function inter(a){
+        let newAry=[];
+        newAry.push(a[0]);
+        for(var i=1;i<a.length;i++){
+            var ss=a[i];
+            for(var j = newAry.length - 1; j >= 0; j--){
+                if(ss>newAry[j]){
+                    newAry.splice(j+1,0,ss);
+                    break;//跳出循环，就循环一次即可
+                }
+                if(j === 0){
+                    newAry.unshift(ss);
+                }
+                // console.log(j);
+            }
+        }
+        return newAry;
+    }
+    console.log(inter(a))
+
+
+
+
+    </script>
+</body>
+</html>
