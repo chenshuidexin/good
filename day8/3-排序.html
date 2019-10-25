@@ -23,12 +23,13 @@
 // //forEach循环方法
     // let att=[11,2,6,8,17,4,9];
     // att.forEach((item,i)=>{
-    //     for(var j=0;j<att.length-1-i;j++)
+    //     for(var j=0;j<att.length-1-i;j++){
     //     if(att[j]>att[j+1]){
     //         var t=att[j];
     //         att[j]=att[j+1];
     //         att[j+1]=t;
     //     }
+    // }
     // })
     // console.log(att);
 
@@ -57,26 +58,26 @@
 
 
 //插入排序
-    let a=[11,2,6,8,17,4,9];
-    function inter(a){
-        let newAry=[];
-        newAry.push(a[0]);
-        for(var i=1;i<a.length;i++){
-            var ss=a[i];
-            for(var j = newAry.length - 1; j >= 0; j--){
-                if(ss>newAry[j]){
-                    newAry.splice(j+1,0,ss);
-                    break;//跳出循环，就循环一次即可
-                }
-                if(j === 0){
-                    newAry.unshift(ss);
-                }
-                // console.log(j);
-            }
-        }
-        return newAry;
-    }
-    console.log(inter(a))
+    // let a=[11,2,6,8,17,4,9];
+    // function inter(a){
+    //     let newAry=[];
+    //     newAry.push(a[0]);
+    //     for(var i=1;i<a.length;i++){
+    //         var ss=a[i];
+    //         for(var j = newAry.length - 1; j >= 0; j--){
+    //             if(ss>newAry[j]){
+    //                 newAry.splice(j+1,0,ss);
+    //                 break;//跳出循环，就循环一次即可
+    //             }
+    //             if(j === 0){
+    //                 newAry.unshift(ss);
+    //             }
+    //             // console.log(j);
+    //         }
+    //     }
+    //     return newAry;
+    // }
+    // console.log(inter(a))
 
 
 

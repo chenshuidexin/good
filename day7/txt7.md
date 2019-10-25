@@ -148,10 +148,11 @@
     console.log(ary.indexOf(16))//2
     console.log(ary.lastIndexOf(16))//2
     console.log(ary.indexOf(11));//-1
+    
     ```
     - includes:检测数组中是否包含某一项
     - 传递的实参：想要检测的值
-    - 返回值：有就返回ture;没有就返回false
+    - 返回值：有就返回true;没有就返回false
     - 原数组不发生变化
     ```js
     let ary=[12,14,16,13,3,6]
