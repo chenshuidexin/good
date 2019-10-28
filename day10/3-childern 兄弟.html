@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="ul">
+        <li>
+            <p>12321</p>
+        </li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <script>
+        let li=ul.children;//获取ul元素下的所有元素子节点
+        console.log(li.length);
+        for(let i=0;i<li.length;i++){
+            li[i].style.background= 'red';//所有li元素的背景是红色
+        }
+        ul.firstElementChild.style.background='skyblue';//父级第一个子元素
+        ul.lastElementChild.style.background='blue';//父级最后一个子元素
+
+        console.log(ul.firstElementChild.previousElementSibling)//null  第一个子元素的上一个元素
+        console.log(ul.firstElementChild.nextElementSibling)//  <li style='background:red;'>2</li>  第一个子元素的下一个元素 
+    </script>
+</body>
+
+</html>

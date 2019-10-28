@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <ul id="ul">
+       <!-- li*5{$} Tab键 -->
+       <li>1</li>
+       <li>2</li>
+       <li>3</li>
+       <li>4</li>
+       <li>5</li>
+   </ul> 
+   <script>
+   /*
+   1.通过childNode去拿到所有的子节点
+   2.通过判断这些子节点哪个是元素子节点
+   3.是的话就push到一个数组
+   4.最后把数组再返回去
+   */
+   function children(parent){
+       //如果是字符串就获取
+       //是元素就不需获取
+       if(typeof parent ==='string'){//字符串类型获取元素
+           parent=document.querySelector(parent);//获取变量parent的所有元素
+       }else if(parent.nodeType === 1){//元素节点
+           parent=parent;
+       }if(parent === null)return '正确传参'
+    //    console.log(parent);
+       const childrens=parent.childNodes;//获取所有子节点
+       let arr=[];
+       for(let i=0;i<childrens.length;i++){
+           if(childrens[i].nodeType === 1){//节点类型是元素节点
+               arr.push(childrens[i]);//数组增加
+           }
+       }
+       return arr;
+   }
+   console.log(children('ul'))//'#ul'   ul  都可以获取到。
+   </script>
+</body>
+</html>

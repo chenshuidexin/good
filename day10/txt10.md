@@ -17,42 +17,67 @@
 >+ 读取节点名字==>nodeName======返回名字
 >- 查找当前元素下的所有子节点==childNodes
 >- 查看属性节点===============attributes
-```js
-
-```
+## 
 >- 查找当前元素下的所有子节点====childNodes
 >- 查找当前元素下的元素子节点====children
 >- 查找父级的第一个子元素========firstElementChild
 >- 查找父级的最后一个子元素======lastElementChild
 >- 查找上一个兄弟元素节点=====previousElementSibling
 >- 查找下一个兄弟元素节点========nextElementSibling
-```css
-*{
-    margin:0;
-    padding:0;
-}
-
-```
-```js
-//小李子
-
-```
->- 查找某个元素的父级节点======parentNode
->-  
 
 ## 
-
+>- 查找某个元素的父级节点======parentNode
 # 手写一个children
+```js
+   <ul id="ul">
+       <!-- li*5{$} Tab键 -->
+       <li>1</li>
+       <li>2</li>
+       <li>3</li>
+       <li>4</li>
+       <li>5</li>
+   </ul> 
+   /*
+   1.通过childNode去拿到所有的子节点
+   2.通过判断这些子节点哪个是元素子节点
+   3.是的话就push到一个数组
+   4.最后把数组再返回去
+   */
+   function children(parent){
+       //如果是字符串就获取
+       //是元素就不需获取
+       if(typeof parent ==='string'){//字符串类型获取元素
+           parent=document.querySelector(parent);//获取变量parent的所有元素
+       }else if(parent.nodeType === 1){//元素节点
+           parent=parent;
+       }if(parent === null)return '正确传参'
+    //    console.log(parent);
+       const childrens=parent.childNodes;//获取所有子节点
+       let arr=[];
+       for(let i=0;i<childrens.length;i++){
+           if(childrens[i].nodeType === 1){//节点类型是元素节点
+               arr.push(childrens[i]);//数组增加
+           }
+       }
+       return arr;
+   }
+   console.log(children('ul'))//'#ul'   ul  都可以获取到。
+```
 ## 增删改
 - 创建元素
+>回流(重排):当某个元素发生了几何、位置。。的变化，会使页面局部刷新，导致整个页面刷新;
+>重绘:元素几何、坐标。。不发生改变，只是外观、颜色、风格发生变化的时候会导致某个样式重新绘制
+>不管是回流还是重绘，都是性能的杀手。我们要进可能去少操作DOM，页面至少会回流一次，页面进行一次加载。
+>回流一定重绘，而重绘不一定会导致回流
 >```js
    >  //基本操作
    > ul.innerHTML+="<li>+i+</li>"
+   >//重新加载页面
    >//性能优化
    >let html='';
    >for(var i=0;i<500;i++){
-   >html='<li>'+i+'</li>'
-   >}
+   >html+='<li>'+i+'</li>'
+   >}//时间更短
    >ul.innerHTML=html;
 >```
    >- document.createElement('标签名')
@@ -60,5 +85,17 @@
         >- parent.appendChild(child)
 - 删除元素
  - >parent.removeChild(删除的元素)
+
+- >appendChild() 方法在指定元素节点的最后一个子节点之后添加节点。 
 - 改元素
   - >parent.replaceChild
+  ```js
+  //看本文件中的第7个
+  ```
+>页面中通过元素属性获取出来的都是字符串
+classList 元素对象的类名
+- add 添加一个或多个class
+- contains 指定的class是否存在是的话true 否则为false
+- remove删除一个或多个class
+- replace(老的，新的) 替换class
+- toggle(开关的效果)

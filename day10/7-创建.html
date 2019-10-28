@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        list-style: none;
+        width: 180px;
+        height: 100px;
+        border: 1px solid lightgreen;
+    }
+    </style>
+</head>
+<body>
+    <!-- 表单里value是属性，变量 -->
+   <input type="text" id="txt"><button id="btn">发送</button>
+   <ul id="ul"></ul> 
+   <script>
+   btn.onclick = function(){
+       let val=txt.value;//存储变量值
+       let li = document.createElement('li');//创建li元素
+       li.onclick=function(){
+        //    alert(1);
+           ul.removeChild(this);//删除元素
+       }
+       li.innerText=val;
+       ul.appendChild(li);//在指定元素节点的最后一个子节点之后添加节点。
+       txt.value='';//清除表框内容
+   }
+   </script>
+</body>
+</html>
