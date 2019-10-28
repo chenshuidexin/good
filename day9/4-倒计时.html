@@ -34,7 +34,8 @@
         console.log(mi)
         box.innerHTML=dd+'天'+Hour+'时'+mi+'分'+t+'秒'
     }
-fn();
+fn();//执行定时器中的函数，是一秒钟之后，但是一秒之前页面中是不会显示的
+//所以要在定时器调用之前执行一次fn函数
 setInterval(fn,1000)
     </script>
 </body>

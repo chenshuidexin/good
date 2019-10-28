@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function queryURLParameter(url) {
+            let obj = {};
+            url2 = url.split('?')[1];
+            let ary = url2.replace('#','&HASH=').split('&');
+            ary.forEach(item => {
+                let ary2 = item.split('=');
+                obj[ary2[0]] = ary2[1]; //每次循环  属性名=属性值
+                // return obj;
+            });
+            return obj;
+        }
+        let str = 'http://www.zhufengpeixun.com/stu/?name=zxt&age=28&sex=0#teacher';
+        let result = queryURLParameter(str);
+        console.log(result);
+    </script>
+</body>
+
+</html>

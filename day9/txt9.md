@@ -267,3 +267,82 @@ setTimeout(function(){
 },2000)
 ```
 ## clearInterVal(定时器的返回值，编号)
+# 计时器的应用案例
+```css
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #box{
+        position: absolute;
+        top: -300px;
+        left:0;
+        width: 300px;
+        height: 300px;
+        background: lightcoral;
+        transition: 2s;
+    }
+```
+```js
+//框架
+    <button id="btn">停止</button>
+    <div id="box">
+//色块自动走自动留
+        setTimeout(function(){
+            box.style.top=0;
+            setTimeout(function(){
+                box.style.top='-300px';
+            },5000)
+        },5000)
+//小案例
+//定时器和关闭定时器的应用
+        let timer=setTimeout(function(t){
+            box.style.top=t;
+        },2000,0)
+        btn.onclick=function(){
+            clearTimeout(timer);
+        }
+        box.onclick=function(){
+            box.style.top='-300px';
+        }
+```
+# 数码时钟的案例
+```js
+//框架
+    <div id="box"></div>
+    // <script>
+        function fn(){
+            let d=new Date;
+            let str=d.getFullYear()+'年'+(d.getMonth()+1)+'月'+d.getDate()+'日'+d.getHours()+'时'+d.getMinutes()+'分'+d.getSeconds()+'秒';
+            box.innerHTML=str;
+        }
+        fn();//执行定时器中的函数，是一秒钟之后，但是一秒之前页面中是不会显示的
+        //所以要在定时器调用之前执行一次fn函数
+        setInterval(fn,1000)
+    // </script>
+
+```
+# 倒计时安利
+```js
+ <div id="box"></div>
+    // <script>
+    let d=new Date('2019 10 27 09:20');
+    function fn(){
+        let d2=new Date;//现在的时间
+        let t=Math.floor((d-d2)/1000)//秒
+        console.log(t)
+        let dd=Math.floor(t/86400);//向上取整数是天
+        t%=86400;//余下的还是秒，重新赋值
+        // console.log(dd)
+        let Hour=Math.floor(t/3600);
+        t%=3600;
+        // console.log(Hour)
+        let mi=Math.floor(t/60);
+        t%=60;
+        console.log(mi)
+        box.innerHTML=dd+'天'+Hour+'时'+mi+'分'+t+'秒'
+    }
+fn();//执行定时器中的函数，是一秒钟之后，但是一秒之前页面中是不会显示的
+//所以要在定时器调用之前执行一次fn函数
+setInterval(fn,1000)
+```

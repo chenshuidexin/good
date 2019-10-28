@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" class="active" zf-haha='arr'>
+        <!-- 注释--><!-- 注释-->
+        11111
+        <!-- 注释 -->
+    </div>
+   <script>
+//    console.log(box.nodeType)//1;
+// //    box.childNodes[1].nodeValue='非注释'
+//    console.log(box.childNodes[3].nodeValue)//返回内容
+//    console.log(box.childNodes[3].nodeType)//3文本节点
+//    console.log(box.childNodes[1].nodeType)//8 注释节点
+//    console.log(document.nodeType)//9 文档节点
+//    console.log(box.attributes[0].nodeType);//2 标签属性
+//    console.log(box.attributes[0].nodeName);//id节点标签名
+//    console.log(box.attributes[0].nodeValue);//box 节点内容
+// console.dir(box.attributes[0]);//id 属性节点
+
+let obj={
+    arr:[1,2,3],
+    ary:[3,2,1]
+}
+var attrs=box.attributes;
+for(var i=0;i<attrs.length;i++){
+    if(attrs[i].nodeName === 'zf-haha'){
+        console.log(obj[attrs[i].nodeValue])//[1,2,3]
+    }
+}
+console.log(box.attributes) 
+   </script> 
+</body>
+</html>
