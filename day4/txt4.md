@@ -8,6 +8,15 @@
 - 字符串里放的是检测出来的类型
 - typeof null ==> "object"
 - 检测对象返回的都是"object",不能够详细区分数组和普通对象
+## typeof 一元运算符 全局函数 检测7中数据类型
+- 'number'
+- string
+- 'boolean'
+- 'undefined'
+- 'symbol'
+- 'object'
+- 'function'
+>typeof (null)==>'object'==空对象
 ## 循环
 - for
 - while
