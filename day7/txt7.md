@@ -11,6 +11,27 @@
     - 返回值：新数组的length
     - 原数组发生变化
     ```js
+    //函数机理
+    function push(ary,...arg){//=>([],1,2)
+        let newAry=[...ary,...arg]//形成新数组
+        for(var i=0;i<newAry.length;i++){
+            ary[i]=newAry[i];
+        }
+        return newAry.length
+    }
+    push(ary,1,2,3);
+    //另一种写法
+    function push(){
+        let ary=arguments[0];
+        let len=ary.length;
+        for(var i=1;i<arguments.length;i++){
+            ary[len+(i-1)]=arguments[i];
+        }
+        return ary.length
+    }
+    push()
+    ```
+    ```js
     let ary=[12,14,16,13,3,6];
     console.log(ary.push(11,78,45,25))//新数组的长度
     console.log(ary)
@@ -20,6 +41,17 @@
     - 传递的实参：可以传多个js数据值
     - 返回值：新数组的length
     - 原数组发生变化
+    ```js
+    //函数机理
+    function unshift(ary,...arg){//->([],1,2)
+        let newAry=[...arg,...ary];//倒过来了
+        for(var i=0;i<newAry.length;i++){
+            ary[i]=newAry[i]
+        }
+        return newAry.length
+    }
+    unshift(ary,1,2)
+    ```
     ```js
     let ary=[12,14,16,13,3,6] 
     console.log(ary.unshift(1))//7 新数组的长度
@@ -41,6 +73,15 @@
     - 传递的实参：不传
     - 返回值：删除的那一项
     - 原数组发生变化
+    ```js
+    //手写pop
+    function pop(ary){
+        var da=ary[ary.length-1];
+        ary.length--;
+        return da
+    }
+    pop(ary);
+    ```
     ```js
     let ary=[12,14,16,13,3,6] ;
     console.log(ary.pop())//[6]
@@ -132,6 +173,25 @@
     - 返回值：转化完成的字符串
     - 原数组不发生变化
     ```js
+    //函数机理
+    function join(ary,...arg){
+        let str='';
+        let j=arg[0];
+        if(j === undefined){
+            return ''+ary;
+        }
+        for(var i=0;i<ary.length;i++){
+            if(i === ary.length-1){
+                str +=ary[i]
+            }else{
+                str +=(ary[i]+j)
+            }
+        }
+        return str;
+    }
+    console.log(join(ary,''))
+    ```
+    ```js
     let ary=[12,14,16,13,3,6]
     console.log(ary.join('$'))
     console.log(ary.join())//默认为逗号分隔符
@@ -143,6 +203,20 @@
     - 传递的实参：要检测数组某一项第一次和最后一次索引出现的位置
     - 返回值：有就返回索引值没有就返回-1
     - 原数组不发生变化
+    ```js
+    //函数机理
+    function indexof(ary,...arg){
+        let data=arg[0];
+        let j=arg[1]===undefined?0:arg[1];
+        for(var i=j;i<ary.length;i++){
+            if(ary[i] === data){
+                return i;
+            }
+        }
+        return -1;
+    }
+    console.log(indexof(ary,'你'))
+    ```
     ```js
     let ary=[12,14,16,13,3,6]
     console.log(ary.indexOf(16))//2
@@ -164,6 +238,20 @@
     - 返回值：排序之后的数组
     - 原数组发生变化
     ```js
+    //函数机理
+    function reverse(ary){
+        let ary2=[];
+        for(var i=ary.length-1;i>=0;i--){
+            ary2.push(ary[i]);
+        }
+        for(var i=0;i<ary2.length;i++){
+            ary[i]=ary2[i];
+        }
+        return ary
+    }
+    reverse(ary)
+    ```
+    ```js
     let ary=[1,9,3,6]
     console.log(ary.reverse())
     console.log(ary)
@@ -184,6 +272,16 @@
     - 传递的实参：函数 
     - 返回值：
     - 原数组不发生变化
+    ```js
+    function forEach(ary,callback){
+        for(var i=0;i<ary.length;i++){
+            callback(ary[i],i,ary)
+        }
+    }
+    forEach(ary,function(item,i,all){
+        console.log(item,i,all)
+    })
+    ```
     ```js
     let ary =['q','e','f','r','u']
     ary.forEach((item,index)=>{

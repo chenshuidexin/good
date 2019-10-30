@@ -192,7 +192,7 @@ console.log(num);
 - 0-1之间无限不循环小数==Math.random
 ```js
 let ary=[1,2,3,4,5]
-console.log(Math.max(...ary));//(xxx)里面是数字而不是数组
+Math.max(...ary);//****(xxx)里面是数字而不是数组
 //原生random的代码
 function random(n,m){
     return Math.round(Math.random()*(m-n))+n

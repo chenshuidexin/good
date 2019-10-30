@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    let str = 'abcabcabcabcabcabda';   
+    function fn(strAll,str){
+        let ary=[];
+        for(var i=0;i<strAll.length;i++){
+            if(strAll[i] === str[0] && strAll[i+1]===str[1]){
+                ary.push(i);
+                i++
+            }
+        }
+        return  str+'出现'+ary.length+'次，位置依次为'+ary+'个数'
+    }
+    console.log(fn(str,'ab'))
+   </script> 
+</body>
+</html>

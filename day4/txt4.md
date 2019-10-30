@@ -51,7 +51,7 @@ let fn=function(){}
 //自执行函数
 (function(){})()
 ```
-- >详细输入对象的信息  ===>console.log(xxx)
+- >详细输入对象的信息  ===>console.dir(xxx)
 - >id:元素的id
 - >className:元素的class姓名
 - >innerHTML:元素的内容（识别标签）
