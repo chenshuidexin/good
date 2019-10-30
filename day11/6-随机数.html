@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  <!-- <div id="box"></div>   -->
+  <button id="btn">开始</button>
+  <button id="sto">停止</button>
+  <p id="p">随机</p>
+  <script>
+//随机四位验证码
+//   let aa='1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'
+//   let str='';
+//   for(var  i=0;i<4;i++){
+//       str += aa[Math.round(Math.random()*(aa.length-1))]
+//   }
+//   console.log(str);
+
+//随机数
+let arr=[1,2,3,4,5,6,7,8,9,0];
+let timer;
+btn.onclick=function(){
+    timer=setInterval(()=>{
+        p.innerText=arr[Math.round(Math.random()*(arr.length-1))]
+    },50)
+}
+
+sto.onclick=function(){
+    // alert(1);
+    clearInterval(timer)//清除定时器
+}
+  </script>
+</body>
+</html>

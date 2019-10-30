@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .e{
+        width: 50px;
+        height: 50px;
+        background: palegreen;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: .5s;
+        border-radius: 50%;
+    }
+    #box{
+        position: relative;
+    }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+    for(var i=0;i<10;i++){
+        let div=document.createElement('div');
+        div.className='e';
+        div.style.left=i*60+'px';//分隔开每个圆块
+        div.onoff=true;//设置开关(私定属性)
+        div.onclick=function(){
+            this.style.top=this.onoff?'400px':0;//三元运算符
+            this.onoff=!this.onoff//圆球下落完毕后取反上去
+            l(this)
+            r(this)
+        }
+        box.appendChild(div);
+    }
+    function l(ele){
+        let pre=ele.previousElementSibling
+        // console.log(ele);
+        if(!pre)return;//没有上一个兄弟元素
+        setTimeout(function(){
+            pre.style.top=pre.onoff?
+            '400px':0;
+            debugger;
+            pre.onoff=!pre.onoff
+            l(pre)
+        },100)
+    }
+    function r(ele){
+        let next=ele.nextElementSibling
+        // console.log(ele);
+        if(!next)return;//没有下一个兄弟元素
+        setTimeout(function(){
+            next.style.top=next.onoff?'400px':0;
+            next.onoff=!next.onoff;
+            r(next);
+        },100)
+    }
+    </script>
+</body>
+</html>

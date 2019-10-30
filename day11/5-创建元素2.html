@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+</head>
+<body>
+    <ul id="ul"></ul>
+    <script>
+    let ary=['skyblue','pink','yellow','green','red']
+    ary.forEach(item=>{
+        let li=document.createElement('li');
+        li.style.cssText='width:100px;heigth:100px;background:'+item;
+        ul.appendChild(li)
+    })
+    </script>
+</body>
+</html>

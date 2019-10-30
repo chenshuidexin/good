@@ -18,11 +18,11 @@
     3600   时
     60     分
     */
-    let d=new Date('2019 10 27 09:20');
+    let d=new Date('2019 10 30 09:00');
     function fn(){
         let d2=new Date;//现在的时间
         let t=Math.floor((d-d2)/1000)//秒
-        console.log(t)
+        // console.log(t)
         let dd=Math.floor(t/86400);//向上取整数是天
         t%=86400;//余下的还是秒，重新赋值
         // console.log(dd)
@@ -31,7 +31,7 @@
         // console.log(Hour)
         let mi=Math.floor(t/60);
         t%=60;
-        console.log(mi)
+        // console.log(mi)
         box.innerHTML=dd+'天'+Hour+'时'+mi+'分'+t+'秒'
     }
 fn();//执行定时器中的函数，是一秒钟之后，但是一秒之前页面中是不会显示的

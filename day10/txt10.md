@@ -84,11 +84,12 @@
    >- 让元素的末尾添加一个元素:
         >- parent.appendChild(child)
 - 删除元素
- - >parent.removeChild(删除的元素)
-
-- >appendChild() 方法在指定元素节点的最后一个子节点之后添加节点。 
+ - >parentNode.removeChild(删除的元素)
+ - >parentNode.appendChild(元素) 方法在指定元素节点的最后一个子节点之后添加节点。 
+- 增加元素
+- >parentNode.insertBefore(插入新元素，老元素) 把新元素插到老元素的前面
 - 改元素
-  - >parent.replaceChild
+  - >parentNode.replaceChild(新元素，老元素)
   ```js
   //看本文件中的第7个
   ```
@@ -99,3 +100,19 @@ classList 元素对象的类名
 - remove删除一个或多个class
 - replace(老的，新的) 替换class
 - toggle(开关的效果)
+
+- getAttribute('属性名') 获取标签身上行间的属性
+- setAttribute('属性名','内容') 设置行间属性
+- element.removeAttribute('属性名') 删除行间属性。
+# 手写getAttribute()
+```js
+function  getAttribute(ele,attrName)
+```
+## 去重法
+- 在ES6里面添加了一个数据结构叫Set，长得有点像一个对象，它的特性：set成员中不能有重复的值
+- size --> length
+>console.log([...new Set([1,2,1,2,1,1,1,2,2])])//[1,2]
+- new Set.add()增加
+- new Set.has()查看对象中是否包含某个数据 是返回true否则为false
+- new Set.delete()删除某个数据
+- 

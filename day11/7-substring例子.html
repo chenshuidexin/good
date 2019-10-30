@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #box{
+        width: 300px;
+        /* height: 800px; */
+        border: 1px solid #000;
+        /* margin: 0 auto; */
+        padding: 5px;
+    }
+    .q{
+        background: lightcoral;
+    }
+    </style>
+</head>
+<body>
+    <input type="text" id="txt">
+    <button id="btn">查询</button>
+    <div id="box">
+        <p id="p">朋友是可以一起打着伞在雨中漫步；是可以一起骑了车在路上飞驰；是可以沉溺于美术馆、博物馆；是可以徘徊书店、书廊；朋友是有悲伤一起哭，有欢乐一起笑，有好书一起读，有好歌一起听……友情的真挚永远比不上真金。真金能卖友情不能。友情，就好比一条简单的线。无论你在什么地方，发生什么事情，它都会是把你从沼泽里拉出来，也会是一条牵引你走向未来的线。这线，是坚固的，除非是你亲自剪断它。别人的剪刀是剪不断的。朋友如醇酒，味浓而易醉；朋友如花香。芬芳而淡雅；朋友是秋天的雨，细腻又满怀诗意；朋友是十二月的梅，纯洁又傲然挺立。朋友不是书，它比书更绚丽；朋友不是歌，它比歌更动听；朋友应该是诗——有诗的飘逸；朋友应该是梦——有梦的美丽；朋友更应该是那意味深长的散文，写过昨天又期待未来。</p> 
+        <!-- <a href="javascript:;" id="aa">>>收缩</a> -->
+    </div>
+    <script>
+    // let onoff=true;
+    // let pe=p.innerText;
+    // aa.onclick=function(){
+    //     if(onoff){
+    //         p.innerText=pe.substr(0,36);
+    //         this.innerText='>>展开'
+    //     }else{
+    //         p.innerText=pe;
+    //         this.innerText='>>收缩'
+    //     }
+    //     onoff=!onoff;
+    // }
+
+    let pp=p.innerHTML;
+    btn.onclick=function(){
+        let val=txt.value;
+        if(pp.includes(val)){
+            let ass=pp.split(val);
+            p.innerHTML=ass.join('<span class="q">'+val+'</span>')
+        }else{
+            alert('查无此字')
+        }
+    }
+    </script>
+</body>
+</html>
