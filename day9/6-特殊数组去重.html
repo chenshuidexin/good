@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+  let arr=[1,2,1,2,1,2,3,1,4,5,3,'4',{aa:2},{qq:1}];
+//   console.log([...new Set(arr)])//工作常用的方式
+let ary=[];
+let obj={};
+arr.forEach(item=>{
+    if(typeof item === 'object'){
+        ary.push(item);
+    }else if(!obj[item + typeof(item)]){
+        ary.push(item);
+        obj[item + typeof(item)] = true;
+    }
+})
+console.log(ary,obj)
+
+  </script>  
+</body>
+</html>

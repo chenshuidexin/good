@@ -229,8 +229,8 @@ console.log(date.getSeconds())//获取当前的秒数
 ## 时间戳 1970年到现在的时间
 ```js
 console.log(Date.now())//格林威治时间1970年01月01日00时00分00秒(北京时间1970年01月01日08时00分00秒)起至现在的总秒数
-let data=now Date;//时间戳
-console.log(+date);
+let data=now Date;
+console.log(+date);//时间戳
 ```
 # 
 ## 定时器
@@ -345,4 +345,14 @@ setTimeout(function(){
 fn();//执行定时器中的函数，是一秒钟之后，但是一秒之前页面中是不会显示的
 //所以要在定时器调用之前执行一次fn函数
 setInterval(fn,1000)
+```
+# set用法
+- 在ES6里面添加了一个数据结构叫Set，长得像一个对象。它的特性是：Set中的成员不能有重复的值。
+- console.dir(new Set(数组))中的size-->length
+```js
+let s=new Set
+s.add()//添加数据
+s.has()//是否包含，是的话返回true
+s.delete()//删除某个数据
+//在5中
 ```

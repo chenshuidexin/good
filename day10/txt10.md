@@ -100,19 +100,11 @@ classList 元素对象的类名
 - remove删除一个或多个class
 - replace(老的，新的) 替换class
 - toggle(开关的效果)
-
-- getAttribute('属性名') 获取标签身上行间的属性
-- setAttribute('属性名','内容') 设置行间属性
-- element.removeAttribute('属性名') 删除行间属性。
-# 手写getAttribute()
-```js
-function  getAttribute(ele,attrName)
-```
-## 去重法
-- 在ES6里面添加了一个数据结构叫Set，长得有点像一个对象，它的特性：set成员中不能有重复的值
-- size --> length
->console.log([...new Set([1,2,1,2,1,1,1,2,2])])//[1,2]
-- new Set.add()增加
-- new Set.has()查看对象中是否包含某个数据 是返回true否则为false
-- new Set.delete()删除某个数据
-- 
+### 行间属性
+- element.getAttribute('属性名') 获取标签身上行间的属性
+- element.setAttribute('属性名','内容') 设置行间属性
+- element.removeAttribute('属性名') 删除行间属性
+>除了标准中定义的行间属性(id,class),别的行间属性都在attributes上，也就是说直接通过对象.属性去查找行间属性，一般是找不到的，因为对象上就没有定义过(undefined)，标准行间属性和自定义行间属性，他们所在的空间地址是不一样的。
+>使用对象下的xx去访问的属性，要通过对象下的xx去创建才能访问得到
+>使用getAttribute获取的标签上的自定义属性，要通过手写标签上的属性，要setAttribute设置才能访问的到
+>img.getAttribute('src')===可以避免获取到的路径是绝对路径的情况

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #p{
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        border: 2px solid #000;
+        margin: 10px 0;
+        font-size: 50px;
+    }
+    </style>
+</head>
+<body>
+    <button id="btn" >开始</button>
+    <button id="ting">结束</button>
+    <p id="p"></p>
+    <script>
+    let ary=['11','22','33','44','55','66','77','88','99','00']
+    let timer=null;//提前赋值
+    btn.onclick=function(){
+        timer=setInterval(()=>{//定时器
+            p.innerText=ary[Math.round(Math.random()*(ary.length-1))]//随机抽取
+        },80)
+    }
+    ting.onclick=function(){
+        clearInterval(timer)//清除定时器
+    }
+    </script>
+</body>
+</html>
