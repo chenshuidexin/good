@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        // //0到9之间的两位小数之间的随机变化
+        // let aa=Math.random()*(9)
+        // // console.log(aa)//无限不循环小数
+        // let a=aa.toFixed(2);
+        // console.log(a);
+        // box.innerText=a;
+
+
+        // console.log(a);//报错
+        // a=1;
+        // console.log(a)
+
+
+        // console.log(a);//undefined
+        // if(!('a' in window)){//不走
+        //     var a=13;
+        // }
+        // console.log(a);//undefined
+
+        f = function () {
+            return true
+        }
+        g = function () {
+            return false
+        }
+        ~ function () {//函数执行会形成一个私有作用域
+            if ( g() && [] == ![]) {//报错*******************************false////！false
+                f = function () {
+                    return false
+                };
+
+                function g() {
+                    return true
+                };
+            }
+        }();
+        console.log(f()); //true
+        console.log(g()); //false
+
+
+        
+    </script>
+</body>
+
+</html>
