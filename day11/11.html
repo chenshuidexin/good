@@ -27,28 +27,37 @@
         //     var a=13;
         // }
         // console.log(a);//undefined
+//*****************************************************************************************
+        // f = function () {
+        //     return true
+        // }
+        // g = function () {
+        //     return false
+        // }
+        // ~ function () {//函数执行会形成一个私有作用域
+        //     if ( g() && [] == ![]) {//报错*******************************false////！false
+        //         f = function () {
+        //             return false
+        //         };
 
-        f = function () {
-            return true
+        //         function g() {
+        //             return true
+        //         };
+        //     }
+        // }();
+        // console.log(f()); //true
+        // console.log(g()); //false
+
+        console.log(a)//undefined   报错
+        var a=12;
+        b=12;
+        function fn(){
+            console.log(a,b);//undefined  12
+            var a=b=13;//var a=window.b=13
+            console.log(a,b)//13  13
         }
-        g = function () {
-            return false
-        }
-        ~ function () {//函数执行会形成一个私有作用域
-            if ( g() && [] == ![]) {//报错*******************************false////！false
-                f = function () {
-                    return false
-                };
-
-                function g() {
-                    return true
-                };
-            }
-        }();
-        console.log(f()); //true
-        console.log(g()); //false
-
-
+        fn();
+        console.log(a,b)//12  13
         
     </script>
 </body>
